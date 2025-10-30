@@ -3,10 +3,10 @@ services:
     name: ai-for-her-chatbot
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.12.7
       - key: GROQ_API_KEY
         sync: false
       - key: GOOGLE_API_KEY
