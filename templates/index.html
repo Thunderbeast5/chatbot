@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Sathi - Your Business Companion</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🚀 Startup Sathi</h1>
+                <p class="tagline">Your Guide to Starting a Successful Business</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Area -->
+            <div class="chat-section">
+                <div class="chat-header">
+                    <div class="bot-avatar">🤖</div>
+                    <div>
+                        <h3>Startup Sathi</h3>
+                        <span class="status">● Online</span>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome message -->
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>नमस्ते! Welcome to Startup Sathi! 🙏</p>
+                            <p>I'm here to help you start your own business. Let's begin!</p>
+                            <p>What's your name?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Type your message..." 
+                        onkeypress="handleKeyPress(event)"
+                    />
+                    <button onclick="sendMessage()" class="send-btn">
+                        <span>Send</span> ➤
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="info-panel" id="infoPanel">
+                <div class="panel-header">
+                    <h3>Information</h3>
+                </div>
+                <div class="panel-content" id="panelContent">
+                    <div class="welcome-info">
+                        <h4>How can I help you?</h4>
+                        <ul>
+                            <li>🔍 Discover business ideas</li>
+                            <li>📋 Create startup plans</li>
+                            <li>📍 Find nearby resources</li>
+                            <li>💰 Learn about government schemes</li>
+                            <li>👥 Connect with mentors</li>
+                        </ul>
+                        <p>Just start chatting and I'll guide you!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="ideaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ideaModal')">&times;</span>
+            <div id="ideaModalContent"></div>
+        </div>
+    </div>
+
+    <div id="planModal" class="modal">
+        <div class="modal-content plan-modal">
+            <span class="close" onclick="closeModal('planModal')">&times;</span>
+            <div id="planModalContent"></div>
+        </div>
+    </div>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content map-modal">
+            <span class="close" onclick="closeModal('mapModal')">&times;</span>
+            <div id="mapContainer" style="height: 500px; width: 100%;"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
