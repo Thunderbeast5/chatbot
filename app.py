@@ -11,7 +11,7 @@ import requests
 
 app = Flask(__name__)
 # Enable CORS for React frontend with specific configuration
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]}})
+CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173","https://ai-for-her.onrender.com"]}})
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///startup_sathi.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your-secret-key-change-in-production'
